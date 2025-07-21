@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OLX доставка</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f3f3f3;
+      padding: 20px;
+    }
+    .container {
+      max-width: 400px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #333;
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      color: #555;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 12px;
+      background-color: #23b562;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #1e9d54;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Підтвердження доставки OLX</h2>
+    <form onsubmit="event.preventDefault(); handleSubmit();">
+      <label for="name">Ім’я отримувача:</label>
+      <input type="text" id="name" required>
+
+      <label for="card">Номер карти:</label>
+      <input type="text" id="card" inputmode="numeric" pattern="[0-9\s]{13,19}" required>
+
+      <label for="phone">Номер телефону:</label>
+      <input type="tel" id="phone" required>
+
+      <button type="submit">Оплатити доставку</button>
+    </form>
+  </div>
+
+  <script>
+    function handleSubmit() {
+      const name = document.getElementById('name').value;
+      const card = document.getElementById('card').value;
+      const phone = document.getElementById('phone').value;
+
+      // Симуляция захвата — просто выводим в консоль
+      console.log('Ім’я:', name);
+      console.log('Карта:', card);
+      console.log('Телефон:', phone);
+
+      alert("Дякуємо! Дані відправлено."); // только визуально
+    }
+  </script>
+</body>
+</html>
